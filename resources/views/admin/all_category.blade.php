@@ -68,7 +68,8 @@
                             <a class="btn btn-info" href="{{URL::to('/update-category/'.$view_category->category_id)}}">
                                 <i class="halflings-icon white edit"></i>
                             </a>
-                            <a class="btn btn-danger" href="#">
+                            <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{URL::to('/delete-category/'.$view_category->category_id)
+                            }}">
                                 <i class="halflings-icon white trash"></i>
                             </a>
                         </td>

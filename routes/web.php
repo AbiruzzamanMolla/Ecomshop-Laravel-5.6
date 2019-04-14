@@ -27,3 +27,5 @@ Route::post('/save-category', 'CategoryController@saveCategory');
 Route::get('/inactive-category/{category_id}', 'CategoryController@inactiveCategory');
 Route::get('/active-category/{category_id}', 'CategoryController@activeCategory');
 Route::get('/update-category/{category_id}', 'CategoryController@viewCategoryId');
+Route::post('/update-category/{category_id}', 'CategoryController@updateCategory');
+Route::get('/delete-category/{category_id}', 'CategoryController@deleteCategory');

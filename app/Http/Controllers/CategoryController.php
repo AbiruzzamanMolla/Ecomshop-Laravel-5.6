@@ -42,9 +42,23 @@ class CategoryController extends Controller
         return Redirect::to('/all-category');
     }
     public function viewCategoryId($category_id){
-        $category_info = DB::table('tbl_category')->where('category_id', $category_id)->get();
-
-        $show_all = view('admin.update_category')->with('category_info', $category_info);
-        return view('admin_layout')->with('admin.update_category', $show_all);
+        $category_info = DB::table('tbl_category')->where('category_id', $category_id)->first();
+        $show = view('admin.update_category')->with('category_info', $category_info);
+        return view('admin_layout')->with('admin.update_category', $show);
     }
+    public function updateCategory(Request $request, $category_id){
+        $data=array();
+        $data['category_name'] = $request->category_name;
+        $data['category_description'] = $request->category_description;
+        DB::table('tbl_category')->where('category_id', $category_id)->update($data);
+        Session::put('msg','Category updated successfully!!');
+        return Redirect::to('/all-category');
+    }
+    public function deleteCategory($category_id){
+        DB::table('tbl_category')->where('category_id', $category_id)->delete();
+        Session::put('msg','Category successfully deleted!!');
+        return Redirect::to('/all-category');
+    }
+
+
 }

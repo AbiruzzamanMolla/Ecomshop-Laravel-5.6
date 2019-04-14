@@ -26,21 +26,22 @@
                 </div>
             </div>
             <div class="box-content">
-                <form class="form-horizontal" action="{{ url('/update-category') }}" method="post">
+                <form class="form-horizontal" action="{{ url('/update-category', $category_info->category_id) }}"
+                      method="post">
                     {{ csrf_field() }}
                     <fieldset>
                         <div class="control-group">
                             <label class="control-label" for="categoryName">Category Name</label>
                             <div class="controls">
                                 <input type="text" class="input-xlarge" name="category_name" id="categoryName"
-                                       value="{{ $category_info->category_name }}">
+                                       value="{{$category_info->category_name}}">
                             </div>
                         </div>
                         <div class="control-group hidden-phone">
                             <label class="control-label" for="Description">Category Description</label>
                             <div class="controls">
                                 <textarea class="cleditor" name="category_description" id="Description"
-                                          rows="3">{{ $category_info->category_description }}</textarea>
+                                          rows="3">{{$category_info->category_description}}</textarea>
                             </div>
                         </div>
                         <div class="form-actions">
