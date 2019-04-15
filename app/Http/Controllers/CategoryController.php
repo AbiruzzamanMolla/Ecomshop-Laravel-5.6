@@ -62,3 +62,6 @@ class CategoryController extends Controller
 
 
 }
+
+// ToDo: Make category visible to home page
+// ToDo: Delete those category and make new category
