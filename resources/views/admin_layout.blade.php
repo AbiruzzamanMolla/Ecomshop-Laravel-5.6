@@ -352,12 +352,14 @@
                     </li>
                     <li>
                         <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span
-                                    class="hidden-tablet"> Manage Brand</span></a>
+                                    class="hidden-tablet"> Manage Manufecture</span></a>
                         <ul>
-                            <li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span
-                                            class="hidden-tablet"> All Brand</span></a></li>
-                            <li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span
-                                            class="hidden-tablet"> Add Brand</span></a></li>
+                            <li><a class="submenu" href="{{URL::to('/all-manufecture')}}"><i
+                                            class="icon-file-alt"></i><span
+                                            class="hidden-tablet"> All Manufecture</span></a></li>
+                            <li><a class="submenu" href="{{URL::to('/add-manufecture')}}""><i
+                                        class="icon-file-alt"></i><span
+                                            class="hidden-tablet"> Add Manufecture</span></a></li>
                         </ul>
                     </li>
                     <li>

@@ -29,3 +29,13 @@ Route::get('/active-category/{category_id}', 'CategoryController@activeCategory'
 Route::get('/update-category/{category_id}', 'CategoryController@viewCategoryId');
 Route::post('/update-category/{category_id}', 'CategoryController@updateCategory');
 Route::get('/delete-category/{category_id}', 'CategoryController@deleteCategory');
+
+// menufecture routes
+Route::get('/add-manufecture', 'ManufectureController@addManufecture');
+Route::post('/save-manufecture', 'ManufectureController@saveManufecture');
+Route::get('/all-manufecture', 'ManufectureController@viewManufecture');
+Route::get('/inactive-manufecture/{manufecture_id}', 'ManufectureController@inactiveManufecture');
+Route::get('/active-manufecture/{manufecture_id}', 'ManufectureController@activeManufecture');
+Route::get('/update-manufecture/{manufecture_id}', 'ManufectureController@viewManufectureId');
+Route::post('/update-manufecture/{manufecture_id}', 'ManufectureController@updateManufecture');
+Route::get('/delete-manufecture/{manufecture_id}', 'ManufectureController@deleteManufecture');
