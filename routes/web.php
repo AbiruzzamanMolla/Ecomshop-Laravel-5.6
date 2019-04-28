@@ -39,3 +39,11 @@ Route::get('/active-manufecture/{manufecture_id}', 'ManufectureController@active
 Route::get('/update-manufecture/{manufecture_id}', 'ManufectureController@viewManufectureId');
 Route::post('/update-manufecture/{manufecture_id}', 'ManufectureController@updateManufecture');
 Route::get('/delete-manufecture/{manufecture_id}', 'ManufectureController@deleteManufecture');
+
+// product routes
+
+Route::get('/add-product', 'ProductController@addProduct');
+Route::post('/save-product', 'ProductController@saveProduct');
+Route::get('/all-product', 'ProductController@viewProduct');
+Route::get('/inactive-product/{product_id}', 'ProductController@inactiveProduct');
+Route::get('/active-product/{product_id}', 'ProductController@activeProduct');
