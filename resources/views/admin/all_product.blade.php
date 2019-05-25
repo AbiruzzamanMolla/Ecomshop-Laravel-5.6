@@ -38,8 +38,6 @@
                         <th>Product Name</th>
                         <th>Category Name</th>
                         <th>Manucecture Name</th>
-                        <th>Product Short Description</th>
-                        <th>Product Description</th>
                         <th>Preview</th>
                         <th>Price</th>
                         <th>Size</th>
@@ -56,8 +54,6 @@
                         <td class="center">{{ $view_product->product_name }}</td>
                         <td class="center">{{ $view_product->category_name }}</td>
                         <td class="center">{{ $view_product->manufecture_name }}</td>
-                        <td class="center">{{ $view_product->product_short_description }}</td>
-                        <td class="center">{{ $view_product->product_long_description }}</td>
                         <td class="center"><img src="{{ $view_product->product_image }}" height="100px" width="100px">
                         </td>
                         <td class="center">{{ $view_product->product_price }}</td>

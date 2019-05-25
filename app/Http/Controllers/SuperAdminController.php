@@ -10,7 +10,7 @@ session_start();
 class SuperAdminController extends Controller
 {
     public function logout(){
-        Session::flash();
+        Session::flush();
         return Redirect::to('/admin');
     }
 }
