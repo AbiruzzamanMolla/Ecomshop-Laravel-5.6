@@ -22,8 +22,7 @@
     ('fend/images/ico/apple-touch-icon-144-precomposed.png')}}">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset
     ('fend/images/ico/apple-touch-icon-114-precomposed.png')}}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-          href="{{asset('fend/images/ico/apple-touch-icon-72-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset('fend/images/ico/apple-touch-icon-72-precomposed.png')}}">
     <link rel="apple-touch-icon-precomposed" href="{{asset('fend/images/ico/apple-touch-icon-57-precomposed.png')}}">
 </head><!--/head-->
 
@@ -60,7 +59,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="{{asset('fend/images/home/logo.png')}}" alt=""/></a>
+                        <a href="index.html"><img src="{{asset('fend/images/home/logo.png')}}" alt="" /></a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
@@ -106,8 +105,7 @@
             <div class="row">
                 <div class="col-sm-9">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -147,6 +145,71 @@
     </div><!--/header-bottom-->
 </header><!--/header-->
 
+<section id="slider"><!--slider-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#slider-carousel" data-slide-to="1"></li>
+                        <li data-target="#slider-carousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="col-sm-6">
+                                <h1><span>E</span>-SHOPPER</h1>
+                                <h2>Free E-Commerce Template</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                <button type="button" class="btn btn-default get">Get it now</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="{{asset('fend/images/home/girl1.jpg')}}" class="girl img-responsive" alt="" />
+                                <img src="{{asset('fend/images/home/pricing.png')}}"  class="pricing" alt="" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1><span>E</span>-SHOPPER</h1>
+                                <h2>100% Responsive Design</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                <button type="button" class="btn btn-default get">Get it now</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="{{asset('fend/images/home/girl2.jpg')}}" class="girl img-responsive" alt="" />
+                                <img src="{{asset('fend/images/home/pricing.png')}}"  class="pricing" alt="" />
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1><span>E</span>-SHOPPER</h1>
+                                <h2>Free Ecommerce Template</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                <button type="button" class="btn btn-default get">Get it now</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="{{asset('fend/images/home/girl3.jpg')}}" class="girl img-responsive" alt="" />
+                                <img src="{{asset('fend/images/home/pricing.png')}}" class="pricing" alt="" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section><!--/slider-->
+
 <section>
     <div class="container">
         <div class="row">
@@ -159,13 +222,13 @@
                             $all_category_info = DB::table('tbl_category')->where('publication_status',1)->get();
                         @endphp
                         @foreach($all_category_info as $cat_info)
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="{{URL::to('category/'.$cat_info->category_id)}}">{{
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{{URL::to('category/'.$cat_info->category_id)}}">{{
                                 $cat_info->category_name
                                 }}</a></h4>
-                                </div>
                             </div>
+                        </div>
                         @endforeach
 
                     </div><!--/category-products-->
@@ -178,9 +241,8 @@
                                     $all_menf_info = DB::table('tbl_manufecture')->where('publication_status',1)->get();
                                 @endphp
                                 @foreach($all_menf_info as $manf_info)
-                                    <li><a href="{{URL::to('manufecture/'.$manf_info->manufecture_id)}}"> <span
-                                                    class="pull-right">(50)</span>{{ $manf_info->manufecture_name }}</a>
-                                    </li>
+                                <li><a href="{{URL::to('manufecture/'.$manf_info->manufecture_id)}}"> <span
+                                                class="pull-right">(50)</span>{{ $manf_info->manufecture_name }}</a></li>
                                 @endforeach
 
                             </ul>
@@ -190,20 +252,19 @@
                     <div class="price-range"><!--price-range-->
                         <h2>Price Range</h2>
                         <div class="well text-center">
-                            <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600"
-                                   data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br/>
+                            <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
                             <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
                         </div>
                     </div><!--/price-range-->
 
                     <div class="shipping text-center"><!--shipping-->
-                        <img src="{{asset('fend/images/home/shipping.jpg')}}" alt=""/>
+                        <img src="{{asset('fend/images/home/shipping.jpg')}}" alt="" />
                     </div><!--/shipping-->
 
                 </div>
             </div>
 
-            @yield('content')
+                    @yield('content')
 
         </div>
     </div>
@@ -224,7 +285,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{URL::to('fend/images/home/iframe1.png')}}" alt=""/>
+                                    <img src="{{URL::to('fend/images/home/iframe1.png')}}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -239,7 +300,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{URL::to('fend/images/home/iframe2.png')}}" alt=""/>
+                                    <img src="{{URL::to('fend/images/home/iframe2.png')}}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -254,7 +315,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{URL::to('fend/images/home/iframe3.png')}}" alt=""/>
+                                    <img src="{{URL::to('fend/images/home/iframe3.png')}}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -269,7 +330,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{URL::to('fend/images/home/iframe4.png')}}" alt=""/>
+                                    <img src="{{URL::to('fend/images/home/iframe4.png')}}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -282,7 +343,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="address">
-                        <img src="{{URL::to('fend/images/home/map.png')}}" alt=""/>
+                        <img src="{{URL::to('fend/images/home/map.png')}}" alt="" />
                         <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
                     </div>
                 </div>
@@ -345,10 +406,9 @@
                     <div class="single-widget">
                         <h2>About Shopper</h2>
                         <form action="#" class="searchform">
-                            <input type="text" placeholder="Your email address"/>
-                            <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i>
-                            </button>
-                            <p>Get the most recent updates from <br/>our site and be updated your self...</p>
+                            <input type="text" placeholder="Your email address" />
+                            <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+                            <p>Get the most recent updates from <br />our site and be updated your self...</p>
                         </form>
                     </div>
                 </div>
@@ -361,13 +421,13 @@
         <div class="container">
             <div class="row">
                 <p class="pull-left">Copyright © 2019 eComShop Inc. All rights reserved.</p>
-                <p class="pull-right">Designed by <span><a target="_blank"
-                                                           href="http://www.themeum.com">Themeum</a></span></p>
+                <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
             </div>
         </div>
     </div>
 
 </footer><!--/Footer-->
+
 
 
 <script src="{{asset('fend/js/jquery.js')}}"></script>

@@ -13,6 +13,10 @@
 
 // userRoutes
 Route::get('/', 'HomeController@index');
+Route::get('/category/{category_id}', 'HomeController@categoryById');
+Route::get('/manufecture/{manufecture_id}', 'HomeController@manufectureById');
+Route::get('/product/{product_id}', 'HomeController@productById');
+
 
 // adminRoutes
 Route::get('/admin', 'AdminController@index');
