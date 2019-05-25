@@ -374,7 +374,8 @@
                         </ul>
                     </li>
 
-                    <li><a href="messages.html"><i class="icon-envelope"></i><span class="hidden-tablet">
+                    <li><a href="{{ URL::to('/slider-manager') }}"><i class="icon-envelope"></i><span
+                                    class="hidden-tablet">
                                 Dynamic Slider</span></a></li>
                     <li><a href="tasks.html"><i class="icon-tasks"></i><span class="hidden-tablet">
                                 Social Links</span></a></li>

@@ -88,9 +88,16 @@ class ProductController extends Controller
     public function updateProduct(Request $request, $product_id){
         $this->adminAuth();
         $data=array();
-//        $data['manufecture_name'] = $request->manufecture_name;
-//        $data['manufecture_description'] = $request->manufecture_description;
-//        DB::table('tbl_manufecture')->where('manufecture_id', $manufecture_id)->update($data);
+        $data['product_name'] = $request->product_name;
+        $data['category_id'] = $request->category_id;
+        $data['manufecture_id'] = $request->manufecture_id;
+        $data['product_short_description'] = $request->product_short_description;
+        $data['product_long_description'] = $request->product_long_description;
+        $data['product_price'] = $request->product_price;
+        $data['product_size'] = $request->product_size;
+        $data['product_color'] = $request->product_color;
+        $data['product_qty'] = $request->product_qty;
+        DB::table('tbl_products')->where('product_id', $product_id)->update($data);
         Session::put('msg','Product updated successfully!!');
         return Redirect::to('/all-product');
     }

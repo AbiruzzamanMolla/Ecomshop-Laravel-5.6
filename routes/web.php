@@ -47,5 +47,13 @@ Route::get('/all-product', 'ProductController@viewProduct');
 Route::get('/inactive-product/{product_id}', 'ProductController@inactiveProduct');
 Route::get('/active-product/{product_id}', 'ProductController@activeProduct');
 Route::get('/update-product/{product_id}', 'ProductController@viewProductId');
-Route::post('/update-product/{product_id}', 'ProductController@updateProduct');
+Route::post('/update-product/{product_id}', 'ProductController@pro');
 Route::get('/delete-product/{product_id}', 'ProductController@deleteProduct');
+
+// Slider Controller
+Route::get('/slider-manager', 'SliderController@index');
+Route::get('/slider-manager', 'SliderController@viewSlider');
+Route::post('/save-slider', 'SliderController@saveSlider');
+Route::get('/inactive-slider/{product_id}', 'SliderController@inactiveSlider');
+Route::get('/active-slider/{product_id}', 'SliderController@activeSlider');
+Route::get('/delete-slider/{product_id}', 'SliderController@deleteSlider');
