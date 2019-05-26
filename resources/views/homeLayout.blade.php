@@ -92,7 +92,7 @@
                             <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                             <li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                             <li><a href="{{URL::to('/cart')}}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                            <li><a href="{{URL::to('/admin')}}"><i class="fa fa-lock"></i> Login</a></li>
+                            <li><a href="{{URL::to('/login-check')}}"><i class="fa fa-lock"></i> Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="{{URL::to('/checkout')}}">Checkout</a></li>
                                     <li><a href="{{URL::to('/cart')}}">Cart</a></li>
-                                    <li><a href="{{URL::to('/admin')}}">Login</a></li>
+                                    <li><a href="{{URL::to('/login-check')}}">Login</a></li>
                                 </ul>
                             </li>
                             <li><a href="404.html">404</a></li>

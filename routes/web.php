@@ -17,12 +17,16 @@ Route::get('/category/{category_id}', 'HomeController@categoryById');
 Route::get('/manufecture/{manufecture_id}', 'HomeController@manufectureById');
 Route::get('/product/{product_id}', 'HomeController@productById');
 
-// cart-checkout
+// cart controller
 Route::get('/cart', 'CartController@cart');
 Route::post('/add-to-cart', 'CartController@addToCart');
 Route::post('/delete-cart-product', 'CartController@deleteCart');
 Route::post('/resync-cart-product', 'CartController@resyncCartProduct');
-Route::get('/checkout', 'CartController@checkout');
+
+// checkout controller
+Route::get('/checkout', 'CheckoutController@checkout');
+Route::get('/login-check', 'CheckoutController@login');
+Route::post('/customer-registation', 'CheckoutController@customerRegistation');
 
 // adminRoutes
 Route::get('/admin', 'AdminController@index');
