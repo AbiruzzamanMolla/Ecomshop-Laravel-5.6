@@ -15,17 +15,24 @@
                     <img src="{{URL::to('fend/images/product-details/new.jpg')}}" class="newarrival" alt=""/>
                     <h2>{{ $all_published_product->product_name }}</h2>
                     <p>Web ID: {{ $all_published_product->product_id }}</p>
-                    <img src="{{URL::to('fend/images/product-details/rating.png')}}" alt=""/>
+                    <img src="{{URL::to('fend/images/product-details/rating.png')}}" alt=""/><br>
                     <span>
-                        <span>BDT ৳{{ $all_published_product->product_price }}</span>
+                        <span>৳{{ $all_published_product->product_price }}</span>
+                        <form action="{{URL::to('/add-to-cart')}}" method="post">
+                            {{ csrf_field() }}
                         <label>Quantity:</label>
-                        <input type="text" value="3"/>
-                        <button type="button" class="btn btn-fefault cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                        <input type="number" name="qty" min="1" max="{{ $all_published_product->product_qty }}"
+                               value="1"/>
+                        <input type="hidden" name="product_id" value="{{ $all_published_product->product_id }}"/>
+                        <button type="submit" class="btn btn-fefault cart"><i class="fa fa-shopping-cart"></i>Add to
+                            cart</button>
+                        </form>
 					</span>
                     <p><b>Availability:</b> In Stock</p>
                     <p><b>Condition:</b> New</p>
                     <p><b>Brand:</b> {{ $all_published_product->manufecture_name }}</p>
-                    <a href=""><img src="{{URL::to('fend/images/product-details/share.png')}}" class="share img-responsive" alt=""/></a>
+                    <a href=""><img src="{{URL::to('fend/images/product-details/share.png')}}"
+                                    class="share img-responsive" alt=""/></a>
                 </div><!--/product-information-->
             </div>
         </div><!--/product-details-->

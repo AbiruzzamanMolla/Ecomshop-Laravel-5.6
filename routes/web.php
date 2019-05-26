@@ -17,6 +17,12 @@ Route::get('/category/{category_id}', 'HomeController@categoryById');
 Route::get('/manufecture/{manufecture_id}', 'HomeController@manufectureById');
 Route::get('/product/{product_id}', 'HomeController@productById');
 
+// cart-checkout
+Route::get('/cart', 'CartController@cart');
+Route::post('/add-to-cart', 'CartController@addToCart');
+Route::post('/delete-cart-product', 'CartController@deleteCart');
+Route::post('/resync-cart-product', 'CartController@resyncCartProduct');
+Route::get('/checkout', 'CartController@checkout');
 
 // adminRoutes
 Route::get('/admin', 'AdminController@index');

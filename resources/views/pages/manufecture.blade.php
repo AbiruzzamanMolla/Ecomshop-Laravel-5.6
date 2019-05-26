@@ -11,8 +11,13 @@
                                 <img src="{{ URL::to($v_product->product_image) }}" height="300px" alt=""/>
                                 <h2>{{ $v_product->product_price }} Taka</h2>
                                 <p>{{ $v_product->product_name }}</p>
-                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add
-                                    to cart</a>
+                                <form action="{{URL::to('/add-to-cart')}}" method="post">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="qty" value="1"/>
+                                    <input type="hidden" name="product_id" value="{{ $v_product->product_id }}"/>
+                                    <button type="submit" class="btn btn-default add-to-cart"><i class="fa
+                                    fa-shopping-cart"></i>Add to cart</button>
+                                </form>
                             </div>
                         </div>
                         <div class="choose">
