@@ -19,10 +19,11 @@
                         <div class="bill-to text-center align-content-center">
                             <p>Bill To</p>
                             <div class="form-one">
-                                <form>
-                                    <input type="text" name="shipping_email" placeholder="Email">
+                                <form action="{{URL::to('/save-shipping-details')}}" method="post">
+                                    {{ csrf_field() }}
+                                    <input type="email" name="shipping_email" placeholder="Email">
                                     <input type="text" name="shipping_name" placeholder=" Name">
-                                    <input type="text" name="shipping_phone" placeholder="Mobile">
+                                    <input type="number" name="shipping_phone" placeholder="Mobile">
                                     <input type="text" name="shipping_city" placeholder="City">
                                     <input type="text" name="shipping_address" placeholder="Address">
                                     <input type="submit" class="btn btn-large btn-default">

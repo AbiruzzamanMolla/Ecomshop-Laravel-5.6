@@ -26,7 +26,10 @@ Route::post('/resync-cart-product', 'CartController@resyncCartProduct');
 // checkout controller
 Route::get('/checkout', 'CheckoutController@checkout');
 Route::get('/login-check', 'CheckoutController@login');
+Route::get('/customer-logout', 'CheckoutController@logout');
+Route::post('/customer-login', 'CheckoutController@customerLogin');
 Route::post('/customer-registation', 'CheckoutController@customerRegistation');
+Route::post('/save-shipping-details', 'CheckoutController@saveShippingDetails');
 
 // adminRoutes
 Route::get('/admin', 'AdminController@index');

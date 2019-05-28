@@ -1,4 +1,3 @@
-<?php
 @extends('clayout')
 @section('content')
     <section id="cart_items">

@@ -90,9 +90,25 @@
                         <ul class="nav navbar-nav">
                             <li><a href="{{URL::to('/dashboard')}}"><i class="fa fa-user"></i> Account</a></li>
                             <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                            <li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                            @php
+                                $customer_id = Session::get('customer_id');
+                            @endphp
+                            @if (!$customer_id)
+                                <li><a href="{{URL::to('/login-check')}}"><i class="fa fa-crosshairs"></i>
+                                        Checkout</a></li>
+                            @else
+                                <li><a href="{{URL::to('/checkout')}}"><i class="fa fa-lock"></i> Checkout</a></li>
+                            @endif
+
                             <li><a href="{{URL::to('/cart')}}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                            <li><a href="{{URL::to('/login-check')}}"><i class="fa fa-lock"></i> Login</a></li>
+                            @php
+                                $customer_id = Session::get('customer_id');
+                            @endphp
+                            @if (!$customer_id)
+                                <li><a href="{{URL::to('/login-check')}}"><i class="fa fa-lock"></i> Login</a></li>
+                            @else
+                                <li><a href="{{URL::to('/customer-logout')}}"><i class="fa fa-lock"></i> Logout</a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -119,7 +135,6 @@
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="{{URL::to('/checkout')}}">Checkout</a></li>
                                     <li><a href="{{URL::to('/cart')}}">Cart</a></li>
-                                    <li><a href="{{URL::to('/login-check')}}">Login</a></li>
                                 </ul>
                             </li>
                             <li><a href="404.html">404</a></li>

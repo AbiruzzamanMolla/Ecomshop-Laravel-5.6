@@ -140,8 +140,15 @@
                             <li>Shipping Cost <span>Free</span></li>
                             <li>Total <span>৳{{Cart::total()}}</span></li>
                         </ul>
-                        <a class="btn btn-default update" href="">Update</a>
-                        <a class="btn btn-default check_out" href="">Check Out</a>
+
+                        @php
+                            $customer_id = Session::get('customer_id');
+                        @endphp
+                        @if (!$customer_id)
+                            <a class="btn btn-default check_out" href="{{URL::to('/login-check')}}">Check Out</a>
+                        @else
+                            <a class="btn btn-default check_out" href="{{URL::to('checkout')}}">Check Out</a>
+                        @endif
                     </div>
                 </div>
             </div>
