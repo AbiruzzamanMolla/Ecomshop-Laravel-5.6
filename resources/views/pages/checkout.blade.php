@@ -20,11 +20,11 @@
                             <p>Bill To</p>
                             <div class="form-one">
                                 <form>
-                                    <input type="text" name="customer_email" placeholder="Email">
-                                    <input type="text" name="customer_name" placeholder=" Name">
-                                    <input type="text" name="customer_phone" placeholder="Mobile">
-                                    <input type="text" name="customer_city" placeholder="City">
-                                    <input type="text" name="customer_address" placeholder="Address">
+                                    <input type="text" name="shipping_email" placeholder="Email">
+                                    <input type="text" name="shipping_name" placeholder=" Name">
+                                    <input type="text" name="shipping_phone" placeholder="Mobile">
+                                    <input type="text" name="shipping_city" placeholder="City">
+                                    <input type="text" name="shipping_address" placeholder="Address">
                                     <input type="submit" class="btn btn-large btn-default">
                             </div>
                                 </form>
